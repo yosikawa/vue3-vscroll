@@ -1,0 +1,21 @@
+ul {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+}
+ul li {
+  display: block;
+  list-style-type: none;
+  border: solid 1px black;
+  padding: 2px;
+  flex-basis: 8em;
+  text-align: center;
+  background: lightblue;
+}
+ul li.narrow {
+  flex-basis: 4em;
+}
+ul li.wide {
+  flex-basis: 30em;
+  text-align: left;
+}

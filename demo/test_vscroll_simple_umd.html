@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="../dist/Vue3Vscroll.umd.js"></script>
+    <script defer src="test_vscroll_simple_umd.js"></script>
+    <link rel="stylesheet" type="text/css" href="demo.css">
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+      <h3>test_vscroll_simple_umd</h3>
+      <vue3-vscroll-simple :list="list" :default-height="80">
+        <template v-slot:header>
+          <ul>
+            <li class="narrow">#</li>
+            <li class="narrow"><input type="checkbox" @click="list.forEach(row => row.flag = $event.target.checked)"></li>
+            <li>vlist range</li>
+            <li class="wide">message</li>
+            <li class="wide">textarea</li>
+          </ul>
+        </template>
+        <template v-slot="slot">
+          <ul>
+            <li class="narrow">{{ slot.row.id }}</li>
+            <li class="narrow"><input type="checkbox" v-model="slot.row.flag">{{ slot.row.flag ? "ON" : "OFF" }}</li>
+            <li>[{{ slot.vlist[0]?.id }} - {{ slot.vlist[slot.vlist.length-1]?.id }}]</li>
+            <li class="wide">{{ slot.row.msg }}</li>
+            <li class="wide"><textarea v-model="slot.row.msg" rows="3" style="width: calc(100% - 20px);"></textarea></li>
+          </ul>
+        </template>
+        <template v-slot:footer>
+          <ul>
+            <li class="narrow">#</li>
+            <li class="narrow"><input type="checkbox" @click="list.forEach(row => row.flag = $event.target.checked)"></li>
+            <li>vlist range</li>
+            <li class="wide">message</li>
+            <li class="wide">textarea</li>
+          </ul>
+        </template>
+      </vue3-vscroll-simple>
+    </div>
+  </body>
+</html>

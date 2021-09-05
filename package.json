@@ -1,0 +1,28 @@
+{
+  "name": "vue3-vscroll",
+  "version": "0.0.0",
+  "main": "./dist/Vue3Vscroll.umd.js",
+  "module": "./dist/Vue3Vscroll.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/Vue3Vscroll.es.js",
+      "require": "./dist/Vue3Vscroll.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.0.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.3.0",
+    "@vue/compiler-sfc": "^3.0.5",
+    "marked": "^2.1.3",
+    "vite": "^2.4.4"
+  },
+  "description": "virtual scroll component for Vue3",
+  "license": "MIT"
+}
